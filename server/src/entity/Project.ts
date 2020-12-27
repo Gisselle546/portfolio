@@ -14,6 +14,11 @@ import { Field, Int, ObjectType } from "type-graphql";
     @Column()
     name!:string;
 
+    @Field(()=>[String])
+    @Column("text",{nullable:true})
+    image?: string[];
+
+
     @Field()
     @Column()
     description!:string;
