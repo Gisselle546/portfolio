@@ -31,7 +31,7 @@ const main = async () => {
     apolloServer.applyMiddleware({ app, cors: corsOptions, path:'/api'});
   
     app.listen(process.env.PORT, () => {
-      console.log("App started");
+      console.log("App started!");
       
     });
    
