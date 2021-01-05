@@ -15,7 +15,7 @@ const main = async () => {
     const app = express_1.default();
     app.use(cors_1.default());
     await typeorm_1.createConnection({
-        name: "default",
+        name: "portfolio",
         type: "postgres",
         url: process.env.DATABASE_URL,
         synchronize: true,
