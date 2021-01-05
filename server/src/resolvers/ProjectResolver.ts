@@ -12,10 +12,10 @@ export class ProjectResolver {
   ) {
     
     
-    const tours = await Project.find()
+    const project = await Project.find()
 
 
-    return tours;
+    return project;
   }
 
 }
