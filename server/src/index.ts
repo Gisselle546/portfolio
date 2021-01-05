@@ -20,7 +20,6 @@ const main = async () => {
         synchronize: true,
         logging: true,
         entities: ["dist/entity/**/*.js"],
-        
         extra: {
           ssl: process.env.SSL || false,
         },
