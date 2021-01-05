@@ -6,12 +6,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 require('dotenv').config();
 const express_1 = __importDefault(require("express"));
+const port = process.env.PORT || 2000;
 const cors_1 = __importDefault(require("cors"));
 const apollo_server_express_1 = require("apollo-server-express");
 const typeorm_1 = require("typeorm");
 const createSchema_1 = require("./utils/createSchema");
 const main = async () => {
-    await typeorm_1.createConnection();
+    await typeorm_1.createConnection({
+        name: "default",
+        type: "postgres",
+        url: process.env.DATABASE_URL,
+        synchronize: true,
+        logging: true,
+        entities: ["dist/entity/**/*.js"],
+        extra: {
+            ssl: process.env.SSL || false,
+        },
+    });
     const schema = await createSchema_1.createSchema();
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema,
@@ -27,7 +38,7 @@ const main = async () => {
         credentials: true
     };
     apolloServer.applyMiddleware({ app, cors: corsOptions, path: '/api' });
-    app.listen(process.env.PORT, () => {
+    app.listen(port, () => {
         console.log("App started!");
     });
 };

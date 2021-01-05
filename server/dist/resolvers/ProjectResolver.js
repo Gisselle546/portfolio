@@ -14,8 +14,8 @@ const Project_1 = require("./../entity/Project");
 const type_graphql_1 = require("type-graphql");
 let ProjectResolver = class ProjectResolver {
     async projects() {
-        const tours = await Project_1.Project.find();
-        return tours;
+        const projects = await Project_1.Project.find();
+        return projects;
     }
 };
 __decorate([
