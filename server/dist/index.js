@@ -15,15 +15,15 @@ const main = async () => {
     const app = express_1.default();
     app.use(cors_1.default());
     await typeorm_1.createConnection({
-        name: "portfoliogise",
+        name: "default",
         type: "postgres",
         url: process.env.DATABASE_URL,
         synchronize: true,
         logging: true,
         entities: ["dist/entity/**/*.js"],
-        extra: {
-            ssl: process.env.SSL || false,
-        },
+        ssl: {
+            rejectUnauthorized: false
+        }
     });
     const schema = await createSchema_1.createSchema();
     const apolloServer = new apollo_server_express_1.ApolloServer({

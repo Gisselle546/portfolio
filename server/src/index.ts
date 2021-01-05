@@ -14,7 +14,7 @@ const main = async () => {
 
     await createConnection({
         
-    name: "portfoliogise",
+    name: "default",
     type: "postgres",
     url: process.env.DATABASE_URL,
     synchronize: true,

@@ -10,7 +10,7 @@ import Footer from './Components/footer';
 function App() {
 
   const httpLink = new HttpLink({
-    uri: 'http://localhost:4000/api',
+    uri: 'https://portfoliogise.herokuapp.com/api',
     credentials:'include'
   });
 
