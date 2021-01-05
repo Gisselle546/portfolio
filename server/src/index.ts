@@ -10,7 +10,7 @@ import { createSchema } from './utils/createSchema';
 const main = async () => {
 
   const app = Express();
-  app.use(cors());
+  app.use(cors({origin:"https://portfoliogise.netlify.app",credentials:true}));
 
     await createConnection({
         
@@ -39,7 +39,7 @@ const main = async () => {
     });
   
     
-    apolloServer.applyMiddleware({ app, path:'/api'});
+    apolloServer.applyMiddleware({ app, path:'/api',cors:false});
   
     app.listen(port, () => {
       console.log("App started");
