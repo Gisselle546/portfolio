@@ -5,6 +5,7 @@ import { onError } from "@apollo/client/link/error";
 
 import Homepage from './Components/homepage'
 import DrawerBar from './Components/Drawer'
+import Footer from './Components/footer';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
                     <Route path="/" exact component={Homepage}/>
                     
             </Switch>
-           
+           <Footer/>
         </BrowserRouter>
     </ApolloProvider>
   );
