@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("reflect-metadata");
 require('dotenv').config();
+require("reflect-metadata");
 const port = process.env.PORT || 2000;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
@@ -12,6 +12,8 @@ const apollo_server_express_1 = require("apollo-server-express");
 const typeorm_1 = require("typeorm");
 const createSchema_1 = require("./utils/createSchema");
 const main = async () => {
+    const app = express_1.default();
+    app.use(cors_1.default());
     await typeorm_1.createConnection({
         name: "default",
         type: "postgres",
@@ -19,7 +21,6 @@ const main = async () => {
         synchronize: true,
         logging: true,
         entities: ["dist/entity/**/*.js"],
-        ssl: true,
         extra: {
             ssl: process.env.SSL || false,
         },
@@ -32,13 +33,7 @@ const main = async () => {
             res
         })
     });
-    const app = express_1.default();
-    app.use(cors_1.default());
-    const corsOptions = {
-        origin: "http://localhost:3000",
-        credentials: true
-    };
-    apolloServer.applyMiddleware({ app, cors: corsOptions, path: '/api' });
+    apolloServer.applyMiddleware({ app, path: '/api' });
     app.listen(port, () => {
         console.log("App started");
     });

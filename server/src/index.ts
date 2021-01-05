@@ -1,6 +1,5 @@
-
-import "reflect-metadata";
 require('dotenv').config();
+import "reflect-metadata";
 const port = process.env.PORT || 2000;
 import Express from 'express'
 import cors from "cors";
@@ -14,16 +13,17 @@ const main = async () => {
   app.use(cors());
 
     await createConnection({
-        name: "portfolio",
-        type: "postgres",
-        url: process.env.DATABASE_URL,
-        synchronize: true,
-        logging: true,
-        entities: ["dist/entity/**/*.js"],
-        extra: {
-          ssl: process.env.SSL || false,
-        },
-
+        
+    name: "default",
+    type: "postgres",
+    url: process.env.DATABASE_URL,
+    synchronize: true,
+    logging: true,
+    entities: ["dist/entity/**/*.js"],
+    extra: {
+      ssl: process.env.SSL || false,
+    },
+    
 
     });
   
@@ -47,7 +47,7 @@ const main = async () => {
     });
    
     
-}
+};
   
   main();
   
