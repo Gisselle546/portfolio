@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 require('dotenv').config();
-const express_1 = __importDefault(require("express"));
 const port = process.env.PORT || 2000;
+const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const apollo_server_express_1 = require("apollo-server-express");
 const typeorm_1 = require("typeorm");
@@ -19,6 +19,7 @@ const main = async () => {
         synchronize: true,
         logging: true,
         entities: ["dist/entity/**/*.js"],
+        ssl: true,
         extra: {
             ssl: process.env.SSL || false,
         },
@@ -39,7 +40,7 @@ const main = async () => {
     };
     apolloServer.applyMiddleware({ app, cors: corsOptions, path: '/api' });
     app.listen(port, () => {
-        console.log("App started!");
+        console.log("App started");
     });
 };
 main();
