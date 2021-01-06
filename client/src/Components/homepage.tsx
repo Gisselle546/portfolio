@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
+import { Button,Grid } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -15,6 +15,7 @@ createStyles({
   },
 
   heading:{
+    
     display:"flex",
     justifyContent:"center",
     alignItems:"flex-start",
@@ -24,8 +25,12 @@ createStyles({
     flexWrap:"wrap",
     height:"240px",
     overflow:"visible",
-    marginLeft:"1rem",
-    boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
+    boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
+    
+    [theme.breakpoints.up('md')]: {
+      marginLeft:"1rem"
+    }
+    
   },
 
   subButton:{
@@ -50,18 +55,22 @@ const Homepage: React.FC=()=>{
     return(
        
      <> 
-       <div className={classes.root}>
-       <div className={classes.heading} >
-            <h3 style={{margin:"2.6rem"}}> Hi, I'm Gisselle Rodriguez</h3>
-           
-            <h3 style={{margin:"-3rem 1rem"}}>I'm a Full-Stack web developer</h3>
-            <Button variant="outlined"  size="small" className={classes.subButton}> View My Works<ArrowForwardIcon/></Button>
-           
+       <Grid container spacing={3}>
+         <Grid item xs={12}>
+            <div className={classes.root}>
+            <div className={classes.heading} >
+                  <h3 style={{margin:"2.6rem"}}> Hi, I'm Gisselle Rodriguez</h3>
+                
+                  <h3 style={{margin:"-3rem 1rem"}}>I'm a Full-Stack web developer</h3>
+                  <Button variant="outlined"  size="small" className={classes.subButton}> View My Works<ArrowForwardIcon/></Button>
+                
 
-       </div>
+            </div>
 
         
        </div>
+       </Grid>
+      </Grid>
     </>
     
     
