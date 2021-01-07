@@ -18,17 +18,27 @@ createStyles({
         
   },
   firstGrid:{
-      marginLeft:"3rem",
+      
       fontSize:"1.1rem",
-      color:"rgb(16, 124, 16)"
-  },
+      color:"rgb(16, 124, 16)",
+  
+      [theme.breakpoints.up('md')]: {
+        marginLeft:"3rem"
+      }
+  
+    },
 
   links:{
-      marginLeft:"2rem",
+     
       fontSize:"3rem",
-      color:"rgb(16, 124, 16)"
+      color:"rgb(16, 124, 16)",
       
-  }
+      [theme.breakpoints.up('md')]: {
+        marginLeft:"2rem"
+      }
+  
+  
+    }
   
   
 
