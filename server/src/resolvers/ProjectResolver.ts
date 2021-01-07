@@ -6,10 +6,10 @@ import { Resolver, Query, InputType,Field, Mutation,Arg, UseMiddleware } from "t
 export class ProjectResolver {
 
     @Query(() => [Project])
-  
     projects() {
       return Project.find();
     }
   
+
 
 }
