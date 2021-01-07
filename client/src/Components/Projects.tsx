@@ -21,11 +21,7 @@ const Projects: React.FC=()=>{
     const classes = useStyles();
     const {data,loading,error} = useProjectsQuery();
 
-    const dataass =data!.projects.map(project=>{
-        return(
-            <h1>{project.name}</h1>
-        )
-    })
+   console.log(data);
 
 
     if (loading) {
@@ -56,7 +52,7 @@ return(
         <h2>hoooo</h2>
         
     </div>
-)
+);
 
 
 }
