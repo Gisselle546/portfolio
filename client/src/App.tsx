@@ -6,6 +6,7 @@ import { onError } from "@apollo/client/link/error";
 import Homepage from './Components/homepage'
 import DrawerBar from './Components/Drawer'
 import Footer from './Components/footer';
+import Projects from './Components/Projects';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
             <DrawerBar/>
             <Switch>
                     <Route path="/" exact component={Homepage}/>
+                    <Route path="/projects" component={Projects}/>
                     
             </Switch>
            <Footer/>
