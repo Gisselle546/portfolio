@@ -14,7 +14,7 @@ import { Field, Int, ObjectType } from "type-graphql";
     @Column()
     name!:string;
 
-    @Field(()=>[String])
+    @Field(() => [String])
     @Column("text",{nullable:true})
     image?: string[];
 
