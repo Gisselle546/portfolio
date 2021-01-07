@@ -20,6 +20,7 @@ createStyles({
     justifyContent:"center",
     alignItems:"flex-start",
     backgroundColor:"rgba(241, 241, 241)",
+    marginLeft:"0.5rem",
     fontFamily:"Open Sans",
     flex:"0 1 400px",
     flexWrap:"wrap",
