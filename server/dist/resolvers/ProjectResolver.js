@@ -13,15 +13,16 @@ exports.ProjectResolver = void 0;
 const Project_1 = require("../entity/Project");
 const type_graphql_1 = require("type-graphql");
 let ProjectResolver = class ProjectResolver {
-    projects() {
-        return Project_1.Project.find();
+    async projects() {
+        const projects = await Project_1.Project.find();
+        return projects;
     }
 };
 __decorate([
     type_graphql_1.Query(() => [Project_1.Project]),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], ProjectResolver.prototype, "projects", null);
 ProjectResolver = __decorate([
     type_graphql_1.Resolver()
