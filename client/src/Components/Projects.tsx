@@ -21,19 +21,7 @@ const Projects: React.FC=()=>{
     const classes = useStyles();
     const {data,loading,error} = useProjectsQuery();
 
-    const query=data!.projects.map((project=>{
-      
-      return(
-        <>
-      <h1>project.name</h1>
-      <img src={project.image[0]}/>
-        </>
-      );
-
-    
-    
-    }))
-
+    console.log(data);
 
     if (loading) {
         return(
@@ -61,7 +49,7 @@ const Projects: React.FC=()=>{
 return(
     <div>
         <h2>hoooo</h2>
-        {query}
+        
         
     </div>
 );
