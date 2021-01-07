@@ -35,20 +35,20 @@ export type ProjectsQuery = (
   { __typename?: 'Query' }
   & { projects: Array<(
     { __typename?: 'Project' }
-    & Pick<Project, 'id' | 'name' | 'description' | 'image' | 'link' | 'githubLink'>
+    & Pick<Project, 'id' | 'name' | 'description' | 'githubLink' | 'link' | 'image'>
   )> }
 );
 
 
 export const ProjectsDocument = gql`
-    query projects {
+    query Projects {
   projects {
     id
     name
     description
-    image
-    link
     githubLink
+    link
+    image
   }
 }
     `;
