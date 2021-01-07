@@ -32,7 +32,7 @@ createStyles({
      
       fontSize:"3rem",
       color:"rgb(16, 124, 16)",
-      
+      marginLeft:"0.4rem",
       [theme.breakpoints.up('md')]: {
         marginLeft:"2rem"
       }
