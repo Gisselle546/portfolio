@@ -41,7 +41,7 @@ export type ProjectsQuery = (
 
 
 export const ProjectsDocument = gql`
-    query Projects {
+    query projects {
   projects {
     id
     name
