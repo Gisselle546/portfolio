@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 const useStyles = makeStyles((theme: Theme) =>
 createStyles({
   root: {
-    height:"90vh",
+    height:"100vh",
     background:"linear-gradient(to right,rgba(250,240,230, 0),rgba(255,245,238, 0)),url(https://images.unsplash.com/photo-1527995145077-f35025789549?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3450&q=80) center/cover",
     display:"flex",
     alignItems:"center",
