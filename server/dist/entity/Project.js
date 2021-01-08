@@ -26,7 +26,7 @@ __decorate([
 ], Project.prototype, "name", void 0);
 __decorate([
     type_graphql_1.Field(() => [String]),
-    typeorm_1.Column("text", { nullable: true }),
+    typeorm_1.Column("text", { nullable: true, array: true }),
     __metadata("design:type", Array)
 ], Project.prototype, "image", void 0);
 __decorate([

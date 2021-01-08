@@ -13,7 +13,7 @@ const typeorm_1 = require("typeorm");
 const createSchema_1 = require("./utils/createSchema");
 const main = async () => {
     const app = express_1.default();
-    app.use(cors_1.default({ origin: "https://portfoliogise.netlify.app", credentials: true }));
+    app.use(cors_1.default({ origin: "https://portfoliogise.netlify.app/", credentials: true }));
     await typeorm_1.createConnection({
         name: "default",
         type: "postgres",

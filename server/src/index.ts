@@ -12,20 +12,23 @@ const main = async () => {
   const app = Express();
   app.use(cors({origin:"https://portfoliogise.netlify.app",credentials:true}));
 
-    await createConnection({
-        
-    name: "default",
-    type: "postgres",
-    url: process.env.DATABASE_URL,
-    synchronize: true,
-    logging: true,
-    entities: ["dist/entity/**/*.js"],
-    ssl: {
-      rejectUnauthorized: false
-    }
+    await createConnection(
+      {
     
+        name: "default",
+        type: "postgres",
+        url: process.env.DATABASE_URL,
+        synchronize: true,
+        logging: true,
+        entities: ["dist/entity/**/*.js"],
+        ssl: {
+          rejectUnauthorized:false
+        }
+        
+        }
 
-    });
+
+    );
   
     const schema = await createSchema();
   

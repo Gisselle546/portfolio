@@ -7,7 +7,7 @@ export class ProjectResolver {
 
     @Query(() => [Project])
     async projects() {
-      const projects = await Project.find();
+      const projects = await Project.find({});
 
       return projects;
 
