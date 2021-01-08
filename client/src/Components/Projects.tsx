@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme: Theme) =>
     
 
     imageContainer:{
-      height:"300px", 
-      width:"300px"
+      height:"250px", 
+      width:"250px"
     },
 
     details:{
@@ -75,7 +75,7 @@ const Projects: React.FC=()=>{
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
                 <div className={classes.imageContainer}>
-                  <img style={{width:"45%",height:"45%"}} src={project.image[0]}/>
+                  <img style={{width:"75%",height:"75%"}} src={project.image[0]}/>
                 </div>
                 
                 
