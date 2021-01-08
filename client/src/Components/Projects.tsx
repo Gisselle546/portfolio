@@ -47,6 +47,8 @@ const Projects: React.FC=()=>{
     const classes = useStyles();
     const {data,loading,error} = useProjectsQuery();
 
+    const MAX_LENGTH = 80;
+
     if (loading) {
         return(
           <div style={{
@@ -83,6 +85,16 @@ const Projects: React.FC=()=>{
                             <Typography component="h5" variant="h5">
                              {project.name}
                            </Typography>
+
+                           <div>
+                            {
+                                project.description.length>MAX_LENGTH ?
+                                (
+                                   `${project.description.substring(0,MAX_LENGTH)}...`
+                                ):
+                               <p>{project.description}</p>
+                            }
+                            </div>
                
                            
                 </CardContent>
