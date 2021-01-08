@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { CircularProgress, Card, CardMedia, CardContent, Typography, } from '@material-ui/core';
+import { CircularProgress, Card, CardMedia, CardContent, Typography, Grid, } from '@material-ui/core';
 import {useProjectsQuery} from '../generated/graphql';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -98,9 +98,11 @@ const Projects: React.FC=()=>{
 
 return(
     <div className={classes.root}>
-        {dataSet}
-        
-        
+       <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+             {dataSet}
+             </Grid>
+        </Grid>
     </div>
 );
 
