@@ -63,7 +63,7 @@ const Projects: React.FC=()=>{
           return <div>Error</div>
           
         }
-    
+    console.log(data);
 
         const dataSet = data!.projects.map((project)=>{
           
@@ -71,7 +71,7 @@ const Projects: React.FC=()=>{
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
                 <div>
-                  <CardMedia image={project.image[0]}/>
+                  <h1>hi</h1>
                 </div>
                 
                 
