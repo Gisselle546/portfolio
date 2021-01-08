@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content:{
       display:"flex",
-      flexDirection:"column"
+      flexDirection:"column",
+      justifyContent:"space-around"
     }
  
 }));
