@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
      
     },
     content:{
-     
+     backgroundColor:"rgba(58 58 58)"
     }
  
 }));
