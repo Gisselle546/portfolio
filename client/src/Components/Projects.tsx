@@ -9,15 +9,15 @@ const useStyles = makeStyles((theme: Theme) =>
     root:{
         marginTop:"5rem",
         display:"flex",
-        border:"2px solid red"
+       
         
     },
 
 
     list:{
-      marginTop:'1rem',
+      marginTop:'4rem',
       boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
-      border:"2px solid blue"
+      
     },
 
     card:{
