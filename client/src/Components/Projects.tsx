@@ -7,9 +7,15 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
    
     root:{
-        marginTop:"2rem",
-        boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"
+        marginTop:"5rem",
+        
     },
+
+
+    list:{
+      marginTop:'1rem',
+      boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"
+  },
 
     card:{
       display: 'flex'
@@ -52,7 +58,7 @@ const Projects: React.FC=()=>{
         const dataSet = data!.projects.map((project)=>{
           
           return(
-            <div className={classes.root} key={project.id}>
+            <div className={classes.list} key={project.id}>
               <Card>
                 <img className={classes.image} src={project.image[0]}/>
                 <Typography variant="subtitle1" color="textSecondary">
@@ -68,7 +74,7 @@ const Projects: React.FC=()=>{
 
 
 return(
-    <div>
+    <div className={classes.root}>
         {dataSet}
         
         
