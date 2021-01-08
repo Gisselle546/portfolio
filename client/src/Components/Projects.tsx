@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
    
     root:{
         marginTop:"5rem",
-        height:"1000px"
+       
     },
 
 
@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme: Theme) =>
   },
 
     card:{
-      display: 'flex'
-       
+      display: 'flex',
+      flexDirection:"column"
     },
 
     image:{
@@ -59,7 +59,7 @@ const Projects: React.FC=()=>{
           
           return(
             <div className={classes.list} key={project.id}>
-              <Card>
+              <Card className={classes.card}>
                 <img className={classes.image} src={project.image[0]}/>
                 <Typography variant="subtitle1" color="textSecondary">
                                  {project.name}
