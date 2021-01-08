@@ -7,12 +7,12 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
    
     root:{
-        
+        marginTop:"2rem"
     },
 
     image:{
-      height:"30%",
-      width:"30%"
+      height:"20%",
+      width:"20%"
     }
  
 }));
@@ -46,7 +46,7 @@ const Projects: React.FC=()=>{
         const dataSet = data!.projects.map((project)=>{
           
           return(
-            <div key={project.id}>
+            <div className={classes.root} key={project.id}>
               <Card>
                 <img className={classes.image} src={project.image[0]}/>
                 <Typography variant="subtitle1" color="textSecondary">
