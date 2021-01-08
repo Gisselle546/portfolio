@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root:{
         marginTop:"5rem",
         display:"flex",
-        
+        border:"2px solid red"
         
     },
 
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
      
     },
     content:{
-     backgroundColor:"rgba(58 58 58)"
+     
     }
  
 }));
