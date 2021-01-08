@@ -102,7 +102,7 @@ const Projects: React.FC=()=>{
                             }
                             </div>
                             <div style={{display:"flex"}}>
-                            <a href={project.githubLink} className={classes.links}> <FaGithub/>  </a>  
+                            <a href={project.githubLink}> <FaGithub className={classes.links}/>  </a>  
                               <Button>Site</Button>
                          </div>
                            
