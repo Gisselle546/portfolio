@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     image:{
-      height:"40%",
-      width:"40%",
+      height:"70%",
+      width:"70%",
      
     },
 
