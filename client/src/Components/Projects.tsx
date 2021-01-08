@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme: Theme) =>
    
     root:{
         marginTop:"5rem",
-       
+        display:"flex",
+        
     },
 
 
