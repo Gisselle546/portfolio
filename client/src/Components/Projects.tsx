@@ -8,9 +8,12 @@ const useStyles = makeStyles((theme: Theme) =>
    
     root:{
         
-    }
+    },
 
-    
+    image:{
+      height:"30%",
+      width:"30%"
+    }
  
 }));
 
@@ -41,19 +44,15 @@ const Projects: React.FC=()=>{
     
 
         const dataSet = data!.projects.map((project)=>{
+          
           return(
             <div key={project.id}>
               <Card>
-              <CardMedia
-                        
-                        image={project.image[0]}
-                        title="Live from space album cover"
-                    />
-                <div>
+                <img className={classes.image} src={project.image[0]}/>
                 <Typography variant="subtitle1" color="textSecondary">
                                  {project.name}
                 </Typography>
-                </div>
+               
               </Card>
   
             </div>
