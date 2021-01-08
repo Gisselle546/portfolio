@@ -72,7 +72,9 @@ const Projects: React.FC=()=>{
 
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
-                <img src={project.image[0]}/>
+                <div>
+                  <img src={project.image[0]}/>
+                </div>
                 
                 
                 <div className={classes.details}>
