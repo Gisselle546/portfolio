@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
     list:{
       marginTop:'4rem',
-      boxShadow: "box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px"
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
       
     },
 
