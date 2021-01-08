@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, Card, CardMedia, CardContent, Typography, } from '@material-ui/core';
 import {useProjectsQuery} from '../generated/graphql';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,7 +21,23 @@ const Projects: React.FC=()=>{
     const classes = useStyles();
     const {data,loading,error} = useProjectsQuery();
 
-    console.log(data);
+    const dataSet = data!.projects.map((project)=>{
+        return(
+          <div key={project.id}>
+            <Card>
+              <CardMedia
+                image={project.image[0]}
+              />
+              <div>
+              <Typography variant="subtitle1" color="textSecondary">
+                               {project.name}
+              </Typography>
+              </div>
+            </Card>
+
+          </div>
+        );
+    })
 
     if (loading) {
         return(
@@ -48,7 +64,7 @@ const Projects: React.FC=()=>{
 
 return(
     <div>
-        <h2>hoooo</h2>
+        <h2>{dataSet}</h2>
         
         
     </div>
