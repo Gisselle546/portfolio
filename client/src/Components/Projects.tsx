@@ -25,11 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
       
     },
 
-    image:{
-      height:"70%",
-      width:"70%",
-     
-    },
+    
 
     imageContainer:{
       height:"300px", 
