@@ -39,11 +39,13 @@ function App() {
     <ApolloProvider client={client}>
         <BrowserRouter>
             <DrawerBar/>
+            <div style={{minHeight: "100vh"}}>
             <Switch>
                     <Route path="/" exact component={Homepage}/>
                     <Route path="/projects" component={Projects}/>
                     
             </Switch>
+            </div>
            <Footer/>
         </BrowserRouter>
     </ApolloProvider>
