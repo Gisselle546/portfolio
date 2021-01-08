@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     links:{
-      fontSize:"1rem"
+      fontSize:"2.5rem",
+      color:"black"
     },
 
     imageContainer:{
