@@ -44,9 +44,7 @@ const Projects: React.FC=()=>{
           return(
             <div key={project.id}>
               <Card>
-                <CardMedia
-                  image={project.image[0]}
-                />
+               <img src={project.image[0]}/>
                 <div>
                 <Typography variant="subtitle1" color="textSecondary">
                                  {project.name}
