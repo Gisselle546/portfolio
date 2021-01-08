@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
    
     root:{
         marginTop:"5rem",
-        backgroundColor:"blue"
+        
         
     },
 
@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
     image:{
       height:"20%",
-      width:"20%"
+      width:"20%",
+      marginLeft:"1rem"
     },
 
     details:{
