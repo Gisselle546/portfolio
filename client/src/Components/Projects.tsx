@@ -19,12 +19,14 @@ const useStyles = makeStyles((theme: Theme) =>
   },
 
     card:{
-     display:"flex"
+     display:"flex",
+     justifyContent:"flex-start"
       
     },
 
     image:{
-     
+      height:"60%",
+      width:"60%",
      
     },
 
