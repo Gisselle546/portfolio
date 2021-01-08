@@ -28,7 +28,9 @@ const useStyles = makeStyles((theme: Theme) =>
       
     },
 
-    
+    links:{
+      fontSize:"1rem"
+    },
 
     imageContainer:{
      height:"80%"
@@ -99,8 +101,8 @@ const Projects: React.FC=()=>{
                             }
                             </div>
                             <div style={{display:"flex"}}>
-                         <FaGithub/>   
-                         <Button>Site</Button>
+                            <a href={project.githubLink} className={classes.links}> <FaGithub/>  </a>  
+                              <Button>Site</Button>
                          </div>
                            
                 </CardContent>
