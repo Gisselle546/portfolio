@@ -1,7 +1,8 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { CircularProgress, Card, CardMedia, CardContent, Typography, Grid, } from '@material-ui/core';
+import { CircularProgress, Card, CardMedia, CardContent, Typography, Grid, Button, } from '@material-ui/core';
 import {useProjectsQuery} from '../generated/graphql';
+import { FaGithub,FaLinkedin } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -97,7 +98,10 @@ const Projects: React.FC=()=>{
                                <p>{project.description}</p>
                             }
                             </div>
-               
+                            <div style={{display:"flex"}}>
+                         <FaGithub/>   
+                         <Button>Site</Button>
+                         </div>
                            
                 </CardContent>
                 </div>
