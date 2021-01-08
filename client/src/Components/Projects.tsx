@@ -21,24 +21,6 @@ const Projects: React.FC=()=>{
     const classes = useStyles();
     const {data,loading,error} = useProjectsQuery();
 
-    const dataSet = data!.projects.map((project)=>{
-        return(
-          <div key={project.id}>
-            <Card>
-              <CardMedia
-                image={project.image[0]}
-              />
-              <div>
-              <Typography variant="subtitle1" color="textSecondary">
-                               {project.name}
-              </Typography>
-              </div>
-            </Card>
-
-          </div>
-        );
-    })
-
     if (loading) {
         return(
           <div style={{
@@ -58,13 +40,29 @@ const Projects: React.FC=()=>{
         }
     
 
-
+        const dataSet = data!.projects.map((project)=>{
+          return(
+            <div key={project.id}>
+              <Card>
+                <CardMedia
+                  image={project.image[0]}
+                />
+                <div>
+                <Typography variant="subtitle1" color="textSecondary">
+                                 {project.name}
+                </Typography>
+                </div>
+              </Card>
+  
+            </div>
+          );
+      })
 
 
 
 return(
     <div>
-        <h2>{dataSet}</h2>
+        {dataSet}
         
         
     </div>
