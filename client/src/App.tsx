@@ -33,7 +33,6 @@ function App() {
     cache: new InMemoryCache(),
     
     
-    
   })
 
   return (
