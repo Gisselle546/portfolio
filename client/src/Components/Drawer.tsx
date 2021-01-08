@@ -40,7 +40,7 @@ export default function DrawerBar(){
 
     useEffect(() => {
       const handleScroll = () => {
-        const show = window.scrollY > 320
+        const show = window.scrollY > 4
         if (navRef.current !== show) {
           setNavBackground(show)
         }
