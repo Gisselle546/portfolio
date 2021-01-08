@@ -9,8 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root:{
         marginTop:"5rem",
         display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
+        
         
     },
 
@@ -22,7 +21,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
     card:{
      display:"flex",
-     justifyContent:"flex-start"
+     justifyContent:"center",
+      alignItems:"center"
       
     },
 
