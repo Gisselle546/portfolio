@@ -70,9 +70,9 @@ const Projects: React.FC=()=>{
           return(
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
-                <div>
-                  <h1>hi</h1>
-                </div>
+              <CardMedia
+              image={project.image[0]}
+              />
                 
                 
                 <div className={classes.details}>
