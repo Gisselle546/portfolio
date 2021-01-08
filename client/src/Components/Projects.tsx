@@ -19,12 +19,21 @@ const useStyles = makeStyles((theme: Theme) =>
 
     card:{
       display: 'flex',
-      flexDirection:"column"
+      flexDirection:"column",
+      
     },
 
     image:{
       height:"20%",
       width:"20%"
+    },
+
+    details:{
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    content:{
+      flex: '1 0 auto',
     }
  
 }));
@@ -61,10 +70,18 @@ const Projects: React.FC=()=>{
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
                 <img className={classes.image} src={project.image[0]}/>
-                <Typography variant="subtitle1" color="textSecondary">
-                                 {project.name}
-                </Typography>
+                
+                <div className={classes.details}>
+                <CardContent className={classes.content}>
+                            <Typography component="h5" variant="h5">
+                             {project.name}
+                           </Typography>
                
+                           
+                </CardContent>
+                </div>
+              
+              
               </Card>
   
             </div>
