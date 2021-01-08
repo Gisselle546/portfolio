@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
    
     root:{
         marginTop:"5rem",
-        
+        height:"1000px"
     },
 
 
