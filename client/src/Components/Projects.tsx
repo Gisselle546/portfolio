@@ -44,7 +44,11 @@ const Projects: React.FC=()=>{
           return(
             <div key={project.id}>
               <Card>
-               <img src={project.image[0]}/>
+              <CardMedia
+                        
+                        image={project.image[0]}
+                        title="Live from space album cover"
+                    />
                 <div>
                 <Typography variant="subtitle1" color="textSecondary">
                                  {project.name}
