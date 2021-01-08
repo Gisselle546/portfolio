@@ -66,12 +66,15 @@ const Projects: React.FC=()=>{
     console.log(data);
 
         const dataSet = data!.projects.map((project)=>{
+          console.log(project.image[0])
           
           return(
+            
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
               <CardMedia
               image={project.image[0]}
+              title="Live from space album cover"
               />
                 
                 
