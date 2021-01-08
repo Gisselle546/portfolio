@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
   },
 
     card:{
-      display: 'flex',
-      flexDirection:"column",
+     
       
     },
 
@@ -29,8 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     details:{
-      display: 'flex',
-      flexDirection: 'column',
+     
     },
     content:{
       flex: '1 0 auto',
