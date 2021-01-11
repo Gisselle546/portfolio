@@ -14,6 +14,21 @@ createStyles({
     
   },
 
+
+  "@keyframes fadeIn": {
+    "0%": {
+      opacity: 1,
+      transform: "translateX(0)"
+    
+    },
+    "100%": {
+      opacity: 0,
+      transform: "translateX(5rem)"
+    }
+  },
+
+
+
   heading:{
     
     display:"flex",
@@ -26,10 +41,17 @@ createStyles({
     height:"240px",
     overflow:"visible",
     boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
-    
+    animation: "$fadeIn 1s ease-in-out",
+
     [theme.breakpoints.up('md')]: {
       marginLeft:"1rem"
-    }
+    },
+
+
+
+
+
+
     
   },
 
@@ -39,7 +61,11 @@ createStyles({
       border:"1px solid rgba(16, 124, 16)",
       marginTop:"-3rem",
       height:"3rem",
-      fontFamily:"JetBrains Mono"
+      fontFamily:"JetBrains Mono",
+      transition: "1s ease-in-out",
+      "&:hover":{
+        transform: "scale(1.4, 1)" 
+      }
   
     
   
@@ -48,8 +74,13 @@ createStyles({
 }),
 );
 
+interface Props {
 
-const Homepage: React.FC=()=>{
+  history:any
+}
+
+
+const Homepage: React.FC<Props>=({history})=>{
   const classes =  useStyles();
 
     return(
@@ -62,7 +93,7 @@ const Homepage: React.FC=()=>{
                   <h3 style={{margin:"2.6rem"}}> Hi, I'm Gisselle Rodriguez</h3>
                 
                   <h3 style={{margin:"-3rem 1rem"}}>I'm a Full-Stack web developer</h3>
-                  <Button variant="outlined"  size="small" className={classes.subButton}> View My Works<ArrowForwardIcon/></Button>
+                  <Button variant="outlined"  size="small" onClick={()=>history.push('/projects')}className={classes.subButton}> View My Works<ArrowForwardIcon/></Button>
                 
 
             </div>

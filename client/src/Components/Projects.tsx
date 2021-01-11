@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { CircularProgress, Card, CardMedia, CardContent, Typography, Grid, Button, } from '@material-ui/core';
+import { CircularProgress, Card, CardContent, Typography, Grid, Button, } from '@material-ui/core';
 import {useProjectsQuery} from '../generated/graphql';
-import { FaGithub,FaLinkedin } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,14 +37,43 @@ const useStyles = makeStyles((theme: Theme) =>
      height:"80%"
     },
 
-    details:{
-     
-    },
     content:{
       display:"flex",
       flexDirection:"column",
-      justifyContent:"space-around"
+      height:"100%",
+      justifyContent:"space-around", 
+      backgroundColor:"rgba(240,233,222)",
+      fontFamily:"JetBrains Mono"
+  
+      
+      
+    },
+
+    details:{
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"space-around",
+      marginBottom:"50px"
+
+      
+    },
+
+    button:{
+      backgroundColor:"rgba(58, 58, 58)",
+      color:"rgba(16 124 16)",
+      fontSize:"1rem",
+      transition: "0.5s ease-in-out",
+      "&:hover":{
+        transform: "scale(1.2, 1.2)" ,
+        backgroundColor:"rgba(58, 58, 58)",
+
+      }
+    },
+    name:{
+      fontFamily:"Open Sans",
+      fontWeight:"bold"
     }
+   
  
 }));
 
@@ -55,7 +84,7 @@ const Projects: React.FC=()=>{
     const classes = useStyles();
     const {data,loading,error} = useProjectsQuery();
 
-    const MAX_LENGTH = 80;
+    
 
     if (loading) {
         return(
@@ -84,28 +113,24 @@ const Projects: React.FC=()=>{
             <div className={classes.list} key={project.id}>
               <Card className={classes.card}>
                 <div className={classes.imageContainer}>
-                  <img style={{height:"250px"}} src={project.image[0]}/>
+                  <img alt=" "style={{height:"250px"}} src={project.image[0]}/>
                 </div>
                 
                 
-                <div className={classes.details}>
+                <div>
                 <CardContent className={classes.content}>
-                            <Typography component="h5" variant="h5">
+                            <Typography className={classes.name}component="h5" variant="h5">
                              {project.name}
                            </Typography>
 
                            <div>
-                            {
-                                project.description.length>MAX_LENGTH ?
-                                (
-                                   `${project.description.substring(0,MAX_LENGTH)}...`
-                                ):
+                           
                                <p>{project.description}</p>
-                            }
+                           
                             </div>
-                            <div style={{display:"flex"}}>
-                            <a href={project.githubLink}> <FaGithub className={classes.links}/>  </a>  
-                              <Button>Site</Button>
+                            <div className={classes.details}>
+                              <a href={project.githubLink}> <FaGithub className={classes.links}/>  </a>  
+                              <Button onClick={()=>window.location.href=project.link}className={classes.button}variant="contained"  size="large">Site</Button>
                          </div>
                            
                 </CardContent>

@@ -7,6 +7,7 @@ import Homepage from './Components/homepage'
 import DrawerBar from './Components/Drawer'
 import Footer from './Components/footer';
 import Projects from './Components/Projects';
+import Contact from './Components/contact';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
             <Switch>
                     <Route path="/" exact component={Homepage}/>
                     <Route path="/projects" component={Projects}/>
+                    <Route path="/contact" component={Contact}/> 
                     
             </Switch>
             </div>
