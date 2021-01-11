@@ -109,15 +109,20 @@ const Projects: React.FC=()=>{
          
           
           return(
-
-            <div className={classes.list} key={project.id}>
-              <Card className={classes.card}>
-                <div className={classes.imageContainer}>
-                  <img alt=" "style={{height:"250px"}} src={project.image[0]}/>
-                </div>
-                
+          <Grid style={{justifyContent:"center"}}container spacing={2}>
+            
+           
+              <div className={classes.list} key={project.id}>
+                <Card className={classes.card}>
+                  <Grid item xs={12} md={6}>
+                    <div className={classes.imageContainer}>
+                      <img alt=" "style={{height:"250px"}} src={project.image[0]}/>
+                    </div>
+                  </Grid>
                 
                 <div>
+                
+                <Grid item xs={12} md={6}>
                 <CardContent className={classes.content}>
                             <Typography className={classes.name}component="h5" variant="h5">
                              {project.name}
@@ -134,12 +139,14 @@ const Projects: React.FC=()=>{
                          </div>
                            
                 </CardContent>
+                </Grid>
                 </div>
               
               
               </Card>
   
             </div>
+           </Grid>
           );
       })
 
@@ -147,11 +154,10 @@ const Projects: React.FC=()=>{
 
 return(
     <div className={classes.root}>
-       <Grid style={{justifyContent:"center"}}container spacing={2}>
-          <Grid item xs={6} md={6}>
+       
+        
              {dataSet}
-             </Grid>
-        </Grid>
+             
     </div>
 );
 
