@@ -68,7 +68,7 @@ const Contact: React.FC=()=>{
     return(
         <div className={classes.root}>
             <Grid container spacing={3}>
-                <Grid item xs={3}>
+                <Grid item xs={6} md={3}>
                   <div className={classes.gridstyleone}>
                             <div className={classes.contact}>
                                <div className={classes.info}>
@@ -84,7 +84,7 @@ const Contact: React.FC=()=>{
                   </div>
                 
                 </Grid>
-                <Grid item xs={9}>
+                <Grid item xs={6} md={9}>
                     <div className={classes.gridstyletwo}>
                           
                     </div>
