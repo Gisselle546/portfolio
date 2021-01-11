@@ -29,12 +29,20 @@ createStyles({
   },
 
   contact:{
-    margin:"4rem",
-    height:"34vh",
+    marginTop:"4rem",
+    height:"40vh",
     backgroundColor:"rgba(247,247,247)",
     width:"80%",
-    borderRadius: "50%"
+    borderRadius: "50%",
     
+    [theme.breakpoints.up('md')]: {
+      width:"80%",
+      borderRadius: "50%",
+      margin:"4rem",
+      height:"34vh",
+    },
+  
+  
   },
 
   info:{
@@ -42,19 +50,42 @@ createStyles({
     flexDirection:"column",
     justifyContent:"center",
     alignItems:"center",
-    marginTop:"4rem"
+    marginTop:"3.2rem",
+
+    [theme.breakpoints.up('md')]: {
+      marginTop:"4rem"
+    },
+
+    
   },
 
   icons:{
    
     fontSize:"1.8rem",
-    marginTop:"2px",
+    
     transition: "0.5s ease-in-out",
       "&:hover":{
         transform: "scale(1.1, 1.1)" 
-      }
+      },
     
-  }
+      [theme.breakpoints.up('md')]: {
+        marginTop:"2px"
+      },
+
+  
+  
+  },
+
+
+  email:{
+      fontSize:"0.8rem",
+      marginBottom:"0.5rem"
+     
+  },
+  [theme.breakpoints.up('md')]: {
+    textAlign:"center",
+    
+  },
   
 
 }),
@@ -68,11 +99,11 @@ const Contact: React.FC=()=>{
     return(
         <div className={classes.root}>
             <Grid container spacing={3}>
-                <Grid item xs={6} md={3}>
+                <Grid item xs={11 } md={3}>
                   <div className={classes.gridstyleone}>
                             <div className={classes.contact}>
                                <div className={classes.info}>
-                                  <h3 style={{marginLeft:"24px"}}>Email: gissellerodriguez431@gmail.com</h3>
+                                  <h3 className={classes.email}>Email: gissellerodriguez431@gmail.com</h3>
                                   <h3>Phone: (786) 546-0432</h3>
                                   <h3>Github:<a href="https://github.com/Gisselle546"><FaGithub style={{color:"black"}}className={classes.icons}/></a></h3>
                                   <h3>linkedin: <a href="https://linkedin.com/in/grodr431"><FaLinkedin style={{color:"rgb(0, 119, 181)"}}className={classes.icons}/></a></h3>
@@ -84,7 +115,7 @@ const Contact: React.FC=()=>{
                   </div>
                 
                 </Grid>
-                <Grid item xs={6} md={9}>
+                <Grid item xs={1} md={9}>
                     <div className={classes.gridstyletwo}>
                           
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { CircularProgress, Card, CardContent, Typography, Grid, Button, } from '@material-ui/core';
+import { CircularProgress, Card, CardContent, Typography, Grid, Button, CardMedia, } from '@material-ui/core';
 import {useProjectsQuery} from '../generated/graphql';
 import { FaGithub } from 'react-icons/fa';
 
@@ -10,16 +10,18 @@ const useStyles = makeStyles((theme: Theme) =>
     root:{
         marginTop:"5rem",
         display:"flex",
-       
+        
         
     },
 
 
     list:{
       marginTop:'4.5rem',
-      boxShadow: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"
+      boxShadow: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
       
       
+
+
     },
 
     card:{
@@ -33,9 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color:"black"
     },
 
-    imageContainer:{
-     height:"80%"
-    },
+    
 
     content:{
       display:"flex",
@@ -43,8 +43,9 @@ const useStyles = makeStyles((theme: Theme) =>
       height:"100%",
       justifyContent:"space-around", 
       backgroundColor:"rgba(240,233,222)",
-      fontFamily:"JetBrains Mono"
-  
+      fontFamily:"JetBrains Mono",
+      minWidth:"50%"
+    
       
       
     },
@@ -72,6 +73,10 @@ const useStyles = makeStyles((theme: Theme) =>
     name:{
       fontFamily:"Open Sans",
       fontWeight:"bold"
+    },
+    
+    media:{
+      width: 400
     }
    
  
@@ -107,46 +112,50 @@ const Projects: React.FC=()=>{
 
         const dataSet = data!.projects.map((project)=>{
          
+          console.log(project.image[0].toString())
           
           return(
-          <Grid style={{justifyContent:"center"}}container spacing={2}>
-            
            
-              <div className={classes.list} key={project.id}>
-                <Card className={classes.card}>
-                  <Grid item xs={12} md={6}>
-                    <div className={classes.imageContainer}>
-                      <img alt=" "style={{height:"250px"}} src={project.image[0]}/>
-                    </div>
-                  </Grid>
+            <div className={classes.list} key={project.id}>
                 
-                <div>
+             
+              <Card className={classes.card}>
+                  
+              <CardMedia className={classes.media}>
+                <img style={{ objectFit: 'cover', height: "100%", width: "100%"}} alt=""src={project.image[0]}/>
+              </CardMedia>
                 
-                <Grid item xs={12} md={6}>
-                <CardContent className={classes.content}>
-                            <Typography className={classes.name}component="h5" variant="h5">
-                             {project.name}
-                           </Typography>
+                  
+              
 
-                           <div>
+                  
+                    <CardContent className={classes.content}>
+                                <div>
+                                <Typography className={classes.name}component="h5" variant="h5">
+                                {project.name}
+                                 </Typography>
+
+                             
+                              
+                                  <p>{project.description}</p>
+                                  </div>
+                                
+                                <div className={classes.details}>
+                                  <a href={project.githubLink}> <FaGithub className={classes.links}/>  </a>  
+                                  <Button onClick={()=>window.location.href=project.link}className={classes.button}variant="contained"  size="large">Site</Button>
+                               </div>
                            
-                               <p>{project.description}</p>
-                           
-                            </div>
-                            <div className={classes.details}>
-                              <a href={project.githubLink}> <FaGithub className={classes.links}/>  </a>  
-                              <Button onClick={()=>window.location.href=project.link}className={classes.button}variant="contained"  size="large">Site</Button>
-                         </div>
-                           
-                </CardContent>
-                </Grid>
-                </div>
+                    </CardContent>
+                  
+               
               
               
               </Card>
-  
+           
+            
             </div>
-           </Grid>
+            
+           
           );
       })
 
@@ -154,9 +163,13 @@ const Projects: React.FC=()=>{
 
 return(
     <div className={classes.root}>
-       
+         <Grid style={{justifyContent:"center"}}container spacing={1}>
+            
+            <Grid item xs={12} md={6}>
         
              {dataSet}
+            </Grid>
+        </Grid>
              
     </div>
 );
