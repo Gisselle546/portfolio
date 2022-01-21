@@ -95,8 +95,8 @@ const Navbar = () => {
            </div>
            <NavItems>
                 <Link href="/"><NavLink>Home</NavLink></Link>
-                  <NavLink>Projects</NavLink>
-                  <NavLink>About</NavLink>
+                <Link href="/items"><NavLink>Projects</NavLink></Link>
+                <Link href="/about"><NavLink>About</NavLink></Link>
            </NavItems>
          
        </NavbarWrapper>

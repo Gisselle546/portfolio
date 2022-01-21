@@ -2,7 +2,7 @@
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 
-async function fetchQuery(path:string, params = null) {
+async function fetchQuery(path:string, params = " "|| null) {
     
     let url:string;
 
