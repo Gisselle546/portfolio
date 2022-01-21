@@ -87,9 +87,10 @@ const Navbar = () => {
       } 
     }, [])
   
+    console.log(navBackground)
   
     return( 
-       <NavbarWrapper style={{background: navBackground ? "#fcfff9":'transparent' }}>
+       <NavbarWrapper style={{ zIndex:500,  background: navBackground ? "transparent":'transparent' }}>
            <div>
 
            </div>

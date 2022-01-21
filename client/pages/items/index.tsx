@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import React from 'react';
 import ListItems from '../../Components/ListItems';
-import { ItemsWrapper } from '../../styles/items.style';
+import { Header, InnerWrapper, ItemsWrapper } from '../../styles/items.style';
 import { fetchQuery } from '../../utils/fetchqueries';
 import {Grid, Row, Col} from '../../Components/Grid/index';
 
@@ -13,20 +13,20 @@ const Items = ({data}:any) => {
     
     
     <ItemsWrapper/>
-      <div style={{display:"flex", flexDirection:"column", alignItems:'center', justifyContent:"flex-start",height:'70%', width:'80%',backgroundColor:'#7a7a7a', position:"absolute", top:'22%', left:'10%',boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
+      <InnerWrapper>
           
           
-          <h2 style={{color:'#fff',fontWeight:'800', fontSize:'1.8rem',letterSpacing:"1px", fontFamily:" 'Montserrat', sans-serif"}}>Projects</h2>
+          <Header>Projects</Header>
       
           <Grid>
             <Row>
             {data.map((pro:any,i:any)=>{
-              return  <Col size='3'><ListItems key={i} data={pro}/></Col>
+              return  <Col size={1} ><ListItems key={i} data={pro}/></Col>
             })}
             </Row>
         </Grid>
       
-      </div>
+      </InnerWrapper>
     
    
    </>
