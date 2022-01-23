@@ -1,5 +1,6 @@
+import gsap from 'gsap';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {CardContainer, CardButton, CardHeader} from './index.style'
 
 
@@ -10,9 +11,18 @@ interface Props{
 
 
 const ListItems = ({data}:Props) => {
-    console.log(data)
-  return (
-     <CardContainer  >
+    const cardcontainer = useRef(null);
+  
+  
+  useEffect(()=>{
+    gsap.from(cardcontainer.current, {autoAlpha: 0, y: -80, delay: 0.6, duration:1.5})
+  },[])
+  
+  
+  
+  
+    return (
+     <CardContainer ref={cardcontainer} >
          
          <img src={data.attributes.image} height="200px" width="200px"/>
 

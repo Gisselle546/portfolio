@@ -7,6 +7,13 @@ import {Grid, Row, Col} from '../../Components/Grid/index';
 
 const Items = ({data}:any) => {
   console.log(data);
+  
+  
+  
+  
+  
+  
+  
   return (
     <>
     

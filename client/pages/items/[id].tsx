@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import Image from 'next/image'
 import { GetStaticProps,GetStaticPaths } from "next";
 import { fetchQuery } from "../../utils/fetchqueries";
@@ -16,18 +17,35 @@ import {CgWebsite} from 'react-icons/Cg';
 
 const ProjectItem = ({data}:any) => {
 
-    console.log(data)
-
+    const leftcon = useRef(null);
+    const rightcon = useRef(null);
+  
     if(!data){
       return <div>Loading..</div>;
     }
+
+    const TLLOAD = gsap.timeline({
+      default: {
+        ease: "power2",
+        
+      }
+    });
+
+
+
+    useEffect(()=>{
+      TLLOAD.from(leftcon.current,{autoAlpha: 0, y: -40, delay: 0.6, duration:1.5})
+            .from(rightcon.current,{x:40, duration: 0.6 })
+    },[])
+
+
 
   return (
         <Container>
             <Grid>
                <Row>
                 <Col size='6'>
-                  <LeftContain>
+                  <LeftContain ref={leftcon}>
                   <Image
                         alt="Next.js logo"
                         src={data.attributes.image}
@@ -41,7 +59,7 @@ const ProjectItem = ({data}:any) => {
                 </Col>
               
                 <Col  size='6'>
-                  <RightContain>
+                  <RightContain ref={rightcon}>
                     <Header>{data.attributes.Title}</Header>
                     <Description>{data.attributes.Description}</Description>
                     <ButtonContainer>
