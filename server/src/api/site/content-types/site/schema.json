@@ -4,7 +4,8 @@
   "info": {
     "singularName": "site",
     "pluralName": "sites",
-    "displayName": "Site"
+    "displayName": "Site",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,19 +18,13 @@
     "Description": {
       "type": "text"
     },
-    "Images": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "GithubUrl": {
       "type": "string"
     },
     "Url": {
+      "type": "string"
+    },
+    "image": {
       "type": "string"
     }
   }

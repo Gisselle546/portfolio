@@ -6,7 +6,7 @@ import { fetchQuery } from "../../utils/fetchqueries";
 import { Container,Header,Description, RightContain, ButtonContainer,Button, LeftContain } from '../../styles/indi.style';
 import {Grid, Row, Col} from '../../Components/Grid/index';
 import {AiFillGithub} from 'react-icons/ai';
-import {CgWebsite} from 'react-icons/Cg';
+import {CgWebsite} from 'react-icons/cg';
 
 
 
