@@ -28,7 +28,7 @@ const Items = ({data}:any) => {
           <Grid>
             <Row>
             {data.map((pro:any,i:any)=>{
-              return  <Col size={1} key={i}><ListItems key={i} data={pro}/></Col>
+              return  <Col size={1}><ListItems key={i} data={pro}/></Col>
             })}
             </Row>
         </Grid>
