@@ -36,7 +36,7 @@ const ProjectItem = ({data}:any) => {
     useEffect(()=>{
       TLLOAD.from(leftcon.current,{autoAlpha: 0, y: -40, delay: 0.6, duration:1.5})
             .from(rightcon.current,{x:40, duration: 0.6 })
-    },[])
+    })
 
 
 
