@@ -20,9 +20,7 @@ const ProjectItem = ({data}:any) => {
     const leftcon = useRef(null);
     const rightcon = useRef(null);
   
-    if(!data){
-      return <div>Loading..</div>;
-    }
+  
 
     const TLLOAD = gsap.timeline({
       default: {
